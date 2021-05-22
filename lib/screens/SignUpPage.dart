@@ -1,8 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:login_ui_studustry/screens/SignInPage.dart';
 import 'package:show_up_animation/show_up_animation.dart';
+import 'package:page_transition/page_transition.dart';
 
-class SignInPage extends StatelessWidget {
+import 'MainPage.dart';
+
+class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,7 +71,7 @@ class SignInPage extends StatelessWidget {
                                   radius: 75,
                                   child: Image(
                                     image: AssetImage('images/logo1.png'),
-                                    ),
+                                  ),
                                 ),
                                 Text(
                                   'Create a new Account!',
@@ -92,14 +96,16 @@ class SignInPage extends StatelessWidget {
                                         color: Colors.white60,
                                         fontSize: 10.0,
                                       ),
-                                    enabledBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(color: Colors.white60),
-                                    ),
-                                    focusedBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(color: Colors.white60),
-                                    )
-                                  ),
-                                  style: TextStyle(fontSize: 14.0),
+                                      enabledBorder: UnderlineInputBorder(
+                                        borderSide:
+                                            BorderSide(color: Colors.white60),
+                                      ),
+                                      focusedBorder: UnderlineInputBorder(
+                                        borderSide:
+                                            BorderSide(color: Colors.white60),
+                                      )),
+                                  style: TextStyle(
+                                      fontSize: 14.0, color: Colors.white),
                                 ),
                                 SizedBox(
                                   height: 10,
@@ -120,13 +126,15 @@ class SignInPage extends StatelessWidget {
                                         fontSize: 10.0,
                                       ),
                                       enabledBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(color: Colors.white60),
+                                        borderSide:
+                                            BorderSide(color: Colors.white60),
                                       ),
                                       focusedBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(color: Colors.white60),
-                                      )
-                                  ),
-                                  style: TextStyle(fontSize: 14.0),
+                                        borderSide:
+                                            BorderSide(color: Colors.white60),
+                                      )),
+                                  style: TextStyle(
+                                      fontSize: 14.0, color: Colors.white),
                                 ),
                                 SizedBox(
                                   height: 10,
@@ -139,20 +147,22 @@ class SignInPage extends StatelessWidget {
                                   decoration: InputDecoration(
                                       labelText: 'Phone number',
                                       labelStyle: TextStyle(
-                                        fontSize: 14.0,
-                                        color:Colors.white60
-                                      ),
+                                          fontSize: 14.0,
+                                          color: Colors.white60),
                                       hintStyle: TextStyle(
                                         color: Colors.white60,
                                         fontSize: 10.0,
                                       ),
                                       enabledBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(color: Colors.white60),
+                                        borderSide:
+                                            BorderSide(color: Colors.white60),
                                       ),
                                       focusedBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(color: Colors.white60),
+                                        borderSide:
+                                            BorderSide(color: Colors.white60),
                                       )),
-                                  style: TextStyle(fontSize: 14.0),
+                                  style: TextStyle(
+                                      fontSize: 14.0, color: Colors.white),
                                 ),
                                 SizedBox(
                                   height: 10,
@@ -172,31 +182,64 @@ class SignInPage extends StatelessWidget {
                                         fontSize: 10.0,
                                       ),
                                       enabledBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(color: Colors.white60),
+                                        borderSide:
+                                            BorderSide(color: Colors.white60),
                                       ),
                                       focusedBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(color: Colors.white60),
+                                        borderSide:
+                                            BorderSide(color: Colors.white60),
                                       )),
-                                  style: TextStyle(fontSize: 14.0),
+                                  style: TextStyle(
+                                      fontSize: 14.0, color: Colors.white),
                                 ),
-                                SizedBox(height: 15.0,),
-                                ElevatedButton(onPressed: (){},
-                                    child: Text('REGISTER',style: TextStyle(fontSize: 14.0, color: Colors.white70),),
+                                SizedBox(
+                                  height: 15.0,
+                                ),
+                                ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(context, PageTransition(child: MainPage(), type: PageTransitionType.rightToLeft));
+                                  },
+                                  child: Text(
+                                    'REGISTER',
+                                    style: TextStyle(
+                                        fontSize: 14.0, color: Colors.white70),
+                                  ),
                                   style: ButtonStyle(
-                                    padding: MaterialStateProperty.all(EdgeInsets.only(left: 75.0, right: 75.0, top: 15.0, bottom: 15.0)),
-                                    backgroundColor: MaterialStateProperty.all(Color.fromRGBO(29, 62, 83, 0.5),),
+                                    padding: MaterialStateProperty.all(
+                                        EdgeInsets.only(
+                                            left: 75.0,
+                                            right: 75.0,
+                                            top: 15.0,
+                                            bottom: 15.0)),
+                                    backgroundColor: MaterialStateProperty.all(
+                                      Color.fromRGBO(29, 62, 83, 0.5),
+                                    ),
                                     shape: MaterialStateProperty.all(
-                                        new RoundedRectangleBorder(
-                                            borderRadius: new BorderRadius.circular(25.0)
-                                        ),
+                                      new RoundedRectangleBorder(
+                                          borderRadius:
+                                              new BorderRadius.circular(25.0)),
                                     ),
                                   ),
                                 ),
-                                TextButton(onPressed: (){},
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        PageTransition(
+                                            child: SignInPage(),
+                                            type: PageTransitionType
+                                                .rightToLeft));
+                                  },
                                   style: ButtonStyle(
-                                    padding: MaterialStateProperty.all(EdgeInsets.all(0.0))
+                                    padding: MaterialStateProperty.all(
+                                        EdgeInsets.all(0.0)),
+                                    overlayColor: MaterialStateProperty.all(
+                                        Colors.transparent),
                                   ),
-                                  child: Text("Already have an Account? Login!", style: TextStyle(color: Colors.white70),),
+                                  child: Text(
+                                    "Already have an Account? Sign-in!",
+                                    style: TextStyle(color: Colors.white70),
+                                  ),
                                 ),
                               ],
                             ),
